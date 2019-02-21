@@ -1,14 +1,8 @@
-#include "application.h"
-#include <iostream>
-#include "polinom.h"
-#include "number.h"
-#include <math.h>
-
-using namespace std;
+#include <QCoreApplication>
 
 int main(int argc, char *argv[])
 {
-	setlocale(LC_ALL, "Russian");
-	TApplication a(argc, argv);
-	return a.run();
+    QCoreApplication a(argc, argv);
+
+    return a.exec();
 }
