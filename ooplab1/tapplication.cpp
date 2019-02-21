@@ -28,40 +28,40 @@ void TApplication::initRoots() {
 
 void TApplication::initOrRedactCoefs() {
     int val;
-    cout << "Enter коэффициентов полинома." << endl;
-    cout << "Коэффициент при 2й степени (не равен 0): ";
+    cout << "Enter polynom coefficients." << endl;
+    cout << "The coefficient of the 2nd degree (!= 0): ";
     cin >> val;
     while (val == 0)
     {
-        cout << "Ошибка! Введен 0. Повторите ввод: ";
+        cout << "Error! Entered 0. Repeat input: ";
         cin >> val;
     }
     polynom.setCoefA(val);
-    cout << "Коэффициент при 1й степени: ";
+    cout << "The coefficient of the 1st degree: ";
     cin >> val;
     polynom.setCoefB(val);
-    cout << "Коэффициент при 0й степени: ";
+    cout << "The coefficient of the free member: ";
     cin >> val;
     polynom.setCoefC(val);
     polyInited = true;
 }
 
 void TApplication::initShowRoots() {
-    cout << "Корень(-ни): ";
+    cout << "Root(-s): ";
     polynom.showRoots();
 }
 
 int TApplication::menu() {
     system("cls");
     cout << "Menu:" << endl;
-    cout << "1. Ввод/изменение коэффициентов полинома" << endl;
-    cout << "2. Ввод значения Х" << endl;
-    cout << "3. Поиск корней полинома" << endl;
-    cout << "4. Вычисление значение полинома при заданном х" << endl;
-    cout << "5. бШБНД ЛМНЦНВКЕМЮ Х ББЕДЕММНЦН ГМЮВЕМХЪ X" << endl;
-    cout << "0. Выход" << endl;
+    cout << "1. Enter/change polynom's coefficients" << endl;
+    cout << "2. Enter value x" << endl;
+    cout << "3. Search polynom root " << endl;
+    cout << "4. Calculate polynom value for a given X" << endl;
+    cout << "5. Print polynom and x value" << endl;
+    cout << "0. Exit" << endl;
     int choice;
-    cout<< endl << "Поле ввода: ";
+    cout<< endl << "Input field: ";
     cin >> choice;
     return 	choice;
 }
@@ -90,16 +90,16 @@ int TApplication::run()
             if (!polyInited) initOrRedactCoefs();
             if (!xValueInited) initXValue();
             initSolution();
-            cout << "Значение при x=" << xValue << ": " << polynom.get_solution();
+            cout << "Value for x = " << xValue << ": " << polynom.get_solution();
             _getch();
             break;
         case 5:
             if (polyInited) {
                 cout << polynom;
-            }else cout << "Полином не задан" << endl;
+            }else cout << "Polynom is undefined" << endl;
             if (xValueInited) {
                 cout << "x=" << xValue;
-            }else cout << "гМЮВЕМХЕ у МЕ ХМХЖХЮКХГХПНБЮМН";
+            }else cout << "x is undefined";
             _getch();
             break;
         default:

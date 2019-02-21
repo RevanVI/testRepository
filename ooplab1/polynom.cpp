@@ -79,7 +79,7 @@ void TPolynom::findRoots() {
 void TPolynom::showRoots()
 {
     if (num_of_roots == 0)
-        cout << "Корней нет";
+        cout << "No roots";
     else
         for (int i = 0; i < num_of_roots; ++i)
             cout << roots[i] << " ";
@@ -92,7 +92,7 @@ ostream& operator<<(ostream& out , TPolynom& pol) {
     cout << pol.b;
     if (pol.c >= number(0))
         cout << "+ ";
-    cout << pol.c << " = 0 ";
+    cout << pol.c;
     return out;
 }
 
